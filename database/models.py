@@ -14,7 +14,7 @@ class Post(Base):
     link = Column(String, unique=True, nullable=False)
     published = Column(DateTime, nullable=False)
     content_hash = Column(String, unique=True, nullable=False)
-    sent_at = Column(DateTime, default=datetime.utcnow)
+    sent_at = Column(DateTime, default=datetime.now)
     
     @staticmethod
     def compute_hash(title: str, link: str) -> str:

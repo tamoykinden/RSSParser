@@ -14,7 +14,7 @@
 - Notifier - отправляет сообщения в Telegram (aiogram)
 - PostgreSQL - хранит таблицу posts с хэшами отправленных постов
 
-### Поток данных
+### Шаги:
 
 1. **Scheduler** каждые N минут вызывает функцию `poll_rss()`
 2. **RSSParser.fetch()** загружает и парсит RSS → возвращает список постов
@@ -31,11 +31,17 @@
 ### Таблица 'posts'
 
 `id` - INTEGER - Первичный ключ
+
 `title` - VARCHAR - Заголовок новости
+
 `link` - VARCHAR - Ссылка на новость (UNIQUE)
+
 `published` - TIMESTAMP - Дата публикации
+
 `content_hash` - VARCHAR - хеш(title + link) (UNIQUE)
+
 `sent_at` - TIMESTAMP - Время отправки (DEFAULT NOW)
+
 
 ## 3. Логика дедупликации
 Алгоритм
