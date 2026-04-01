@@ -58,7 +58,7 @@
 ## Установка и запуск
 ```bash
 git clone git@github.com:tamoykinden/RSSParser.git
-cd rss
+cd RSSParser
 ```
 
 ### Создать виртуальное окружение
